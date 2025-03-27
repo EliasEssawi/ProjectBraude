@@ -4,5 +4,5 @@
 /**
  * 
  */
-module ProjectBraude5 {
+module ProjectBraude5 {private
 }
