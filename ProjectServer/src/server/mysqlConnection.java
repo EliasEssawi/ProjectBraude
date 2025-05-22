@@ -25,7 +25,7 @@ public class mysqlConnection {
         try {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/parking?useSSL=false&serverTimezone=Asia/Jerusalem",
-                    "root", "Ee030620");
+                    "yourUsernameHere", "yourPasswordHere");
             if (EchoServer.messageController != null) {
                 EchoServer.messageController.appendMessage("SQL connection succeeded.");
             }
