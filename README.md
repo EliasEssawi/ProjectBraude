@@ -13,10 +13,19 @@ To run the client and server, make sure you have:
 - **MySQL Server**
 
 ---
-Database Setup
+Database Setup 
+`ProjectServer/src/server/mysqlConnection.java`
 
-You need to update the MySQL connection string in the file:
+You need to update the MySQL connection string in this file.
+
+Replace the following line:
+
+```java
 Connection conn = DriverManager.getConnection(
     "jdbc:mysql://localhost:3306/parking?useSSL=false&serverTimezone=Asia/Jerusalem",
-    "yourUsernameHere", "yourPasswordHere"); 
-also notice that in this line my schema name was parking! --> "jdbc:mysql://localhost:3306/parking...
+    "yourUsernameHere", "yourPasswordHere");
+
+Note: In this connection string, the database name is parking:
+"jdbc:mysql://localhost:3306/parking..."
+
+Make sure this database exists, or update the name if you use a different one.
