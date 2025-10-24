@@ -24,7 +24,7 @@ Replace the following line:
 Connection conn = DriverManager.getConnection(
     "jdbc:mysql://localhost:3306/parking?useSSL=false&serverTimezone=Asia/Jerusalem",
     "yourUsernameHere", "yourPasswordHere");
-
+Where is written "yourUsernameHere", "yourPasswordHere" you need to write the file of the SQL name and the Password you chose for it in order to connect!
 Note: In this connection string, the database name is parking:
 "jdbc:mysql://localhost:3306/parking..."
 
