@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Import necessary JavaFX UI components -->
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Root layout container: VBox with padding and spacing -->
+<VBox alignment="TOP_LEFT" prefHeight="300" prefWidth="500" spacing="10" style="-fx-padding: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ServerMessageFrameController">
+
+    <!-- Title label for the log section -->
+    <Label text="Server Log:" />
+
+    <!-- TextArea to display server log messages (not editable) -->
+    <TextArea id="logArea" fx:id="logArea" editable="false" prefHeight="200" prefWidth="480" wrapText="true" />
+
+    <!-- Exit button to shut down the server and close the application -->
+    <Button id="ExtSrvrBtn" fx:id="ExtSrvrBtn" cancelButton="true" mnemonicParsing="false" text="Exit Server" onAction="#getExitBtn" />
+
+</VBox>

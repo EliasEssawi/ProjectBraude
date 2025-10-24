@@ -1,0 +1,31 @@
+
+/* Root and pane background and font settings */
+.root, .pane {
+    -fx-background-color: #2e3b4e; /* Dark background */
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Style for all buttons */
+.button {
+    -fx-background-color: #4b6584; /* Blue-gray button background */
+    -fx-text-fill: white;          /* White text */
+    -fx-border-radius: 6;          /* Rounded corners */
+    -fx-background-radius: 6;
+    -fx-font-weight: bold;         /* Bold text */
+    -fx-padding: 6 12 6 12;        /* Internal padding */
+}
+
+/* Style for text input fields */
+.text-field {
+    -fx-background-color: #f5f6fa; /* Light background */
+    -fx-border-color: #718093;     /* Soft gray border */
+    -fx-border-radius: 4;          /* Rounded border */
+    -fx-background-radius: 4;
+    -fx-padding: 4 8 4 8;          /* Padding inside the field */
+}
+
+/* Style for labels */
+.label {
+    -fx-text-fill: #dcdde1;        /* Light gray label text */
+}

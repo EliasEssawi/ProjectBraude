@@ -1,0 +1,47 @@
+/* ============================= */
+/* Global Style Settings        */
+/* ============================= */
+
+/* Sets background color and default font across root layout and VBox containers */
+.root, .vbox {
+    -fx-background-color: #2e3b4e; /* Dark background color for consistency */
+    -fx-font-family: "Segoe UI", sans-serif; /* Clean modern font */
+    -fx-font-size: 14px; /* Default font size */
+}
+
+/* ============================= */
+/* Label Styling                 */
+/* ============================= */
+
+/* Applies styling to all Label components */
+.label {
+    -fx-text-fill: #dcdde1; /* Light text color for readability on dark background */
+    -fx-font-weight: bold;  /* Bold text for emphasis */
+}
+
+/* ============================= */
+/* TextArea Styling              */
+/* ============================= */
+
+/* Style for all TextArea components */
+.text-area {
+    -fx-background-color: #f5f6fa; /* Light background for input readability */
+    -fx-border-color: #718093;     /* Subtle border color */
+    -fx-border-radius: 4;          /* Rounded corners for border */
+    -fx-background-radius: 4;      /* Rounded background corners to match border */
+    -fx-text-fill: black;          /* Standard black input text */
+}
+
+/* ============================= */
+/* Button Styling                */
+/* ============================= */
+
+/* Common button styles */
+.button {
+    -fx-background-color: #4b6584; /* Neutral blue background */
+    -fx-text-fill: white;          /* White text for contrast */
+    -fx-border-radius: 6;          /* Rounded border edges */
+    -fx-background-radius: 6;      /* Rounded background shape */
+    -fx-font-weight: bold;         /* Bold font for emphasis */
+    -fx-padding: 6 12 6 12;        /* Padding for visual balance */
+}
