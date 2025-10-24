@@ -1,4 +1,8 @@
 /client/
 /common/
 /gui/
+/guiManager/
+/guiSignIn/
+/guiUser/
+/guiUsher/
 /logic/

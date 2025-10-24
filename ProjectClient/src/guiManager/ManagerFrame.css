@@ -1,0 +1,26 @@
+/* Root background style for the entire scene */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Base style for all buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #4682b4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+}
+
+/* Special style for the Exit button */
+#btnExit {
+    -fx-background-color: #d9534f;
+}
+
+/* Label text styling */
+.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333;
+}

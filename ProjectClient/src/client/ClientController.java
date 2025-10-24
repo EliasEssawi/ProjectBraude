@@ -14,9 +14,9 @@ import common.ChatIF;
  * It implements the ChatIF interface in order to activate the display() method.
  * Warning: Some of the code here is cloned in ServerConsole.
  *
- * @author François Bélanger
+ * @author Francois Belanger
  * @author Dr Timothy C. Lethbridge  
- * @author Dr Robert Laganière
+ * @author Dr Robert Laganiere
  * @version July 2000
  */
 public class ClientController implements ChatIF 

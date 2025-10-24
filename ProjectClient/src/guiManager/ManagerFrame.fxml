@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<!--
+  ManagerFrame.fxml
+  Controller: guiManager.ManagerFrameController
+
+  This FXML defines the user interface for the manager's frame,
+  allowing access to various reports: parking, subscriptions, active parking, and subscribers.
+-->
+
+<AnchorPane prefHeight="491.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiManager.ManagerFrameController">
+   <children>
+
+      <!-- Logout button (bottom-right) -->
+      <Button fx:id="btnLogout" layoutX="428.0" layoutY="439.0" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+
+      <!-- Button to fetch parking reports -->
+      <Button fx:id="btnSend" layoutX="341.0" layoutY="50.0" mnemonicParsing="false" onAction="#ViewParkingReports" text="View parking reports" />
+
+      <!-- Main header label -->
+      <Label layoutX="14.0" layoutY="20.0" text="Choose your actions" />
+
+      <!-- Label for showing errors or messages from server -->
+      <Label fx:id="lblError" layoutX="28.0" layoutY="235.0" prefHeight="25.0" prefWidth="400.0" />
+
+      <!-- Button to fetch subscription reports -->
+      <Button layoutX="329.0" layoutY="134.0" mnemonicParsing="false" onAction="#onSubscriptionReportsClicked" prefHeight="18.0" prefWidth="150.0" text="View subscription reports" />
+
+      <!-- Button to fetch active parking lot data -->
+      <Button layoutX="127.0" layoutY="170.0" mnemonicParsing="false" onAction="#onActiveParkingClicked" prefHeight="26.0" prefWidth="228.0" text="View active parking lots" />
+
+      <!-- Output area for textual reports -->
+      <TextArea id="OUTPUT" fx:id="txtReportOutput" editable="false" layoutX="26.0" layoutY="261.0" prefHeight="160.0" prefWidth="437.0" />
+
+      <!-- Date picker for parking report -->
+      <DatePicker fx:id="datePickerParking" layoutX="137.0" layoutY="50.0" />
+
+      <!-- Text field to enter subscription code -->
+      <TextField fx:id="txtSubscriptionInput" layoutX="137.0" layoutY="104.0" />
+
+      <!-- Date picker for subscription report -->
+      <DatePicker fx:id="datePickerSubscription" layoutX="137.0" layoutY="134.0" />
+
+      <!-- Label for subscription code -->
+      <Label layoutX="28.0" layoutY="108.0" text="Subscription code:" />
+
+      <!-- Label for subscription report date -->
+      <Label layoutX="28.0" layoutY="138.0" text="Date of the report:" />
+
+      <!-- Label for parking report date -->
+      <Label layoutX="27.0" layoutY="54.0" text="Date of the report:" />
+
+      <!-- Button to fetch all subscribers -->
+      <Button id="Get_All_Subscribers" layoutX="127.0" layoutY="208.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="228.0" onAction="#onGetParkingSubcsribersClicked" text="get all subscribers" />
+
+   </children>
+</AnchorPane>

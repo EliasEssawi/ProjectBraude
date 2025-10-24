@@ -1,0 +1,26 @@
+/* Root container background */
+.root {
+    -fx-background-color: #f4f4f4;  /* Light gray background for overall window */
+}
+
+/* General button styling */
+.button {
+    -fx-font-size: 14px;           /* Standard button text size */
+    -fx-background-color: #4682b4; /* Steel blue background */
+    -fx-text-fill: white;          /* White text color */
+    -fx-font-weight: bold;         /* Bold text for emphasis */
+    -fx-border-radius: 8;          /* Rounded button border corners */
+    -fx-background-radius: 6;      /* Rounded button background corners */
+    -fx-padding: 8 16 8 16;        /* Padding: top/bottom = 8px, left/right = 16px */
+}
+
+/* Specific style for the Exit button */
+#btnExit {
+    -fx-background-color: #d9534f; /* Bootstrap-style danger red for Exit */
+}
+
+/* General label styling */
+.label {
+    -fx-font-size: 13px;       /* Slightly smaller font size for labels */
+    -fx-text-fill: #333;       /* Dark gray text color for good readability */
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@SubscriberTermenalPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiUser.SubscriberTermenalPageController">
+
+    <!-- ========== Top Bar with Logo and Logout Button ========== -->
+    <top>
+        <HBox fx:id="topBar" alignment="CENTER_LEFT" spacing="20" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="titleLabel" text="BPARK" />
+                
+                <!-- Spacer to push logout button to far right -->
+                <HBox HBox.hgrow="ALWAYS" />
+                
+                <!-- Logout button (top-right) -->
+                <Button id="btnLogout" fx:id="btnLogout" onAction="#onLogoutClicked" styleClass="exit-button" text="Logout" />
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- ========== Footer with Notification Label ========== -->
+    <bottom>
+        <HBox fx:id="footerBar" alignment="CENTER" prefHeight="41.0" prefWidth="888.0">
+            <children>
+                <!-- Notification label for messages (errors/success etc.) -->
+                <Label fx:id="lblNotification" styleClass="notification-label" text="" visible="false" />
+            </children>
+        </HBox>
+    </bottom>
+
+    <!-- ========== Main Left Section: Sidebar + Dynamic Content ========== -->
+    <left>
+        <HBox fx:id="mainContent" alignment="TOP_LEFT" prefHeight="514.0" prefWidth="888.0" spacing="50" BorderPane.alignment="CENTER">
+            <children>
+
+                <!-- ===== Sidebar: Action Buttons ===== -->
+                <GridPane fx:id="actionGrid" alignment="TOP_LEFT" hgap="20" vgap="20">
+
+                    <!-- 1. Check Availability -->
+                    <VBox alignment="CENTER_LEFT" spacing="5.0">
+                        <children>
+                            <Label styleClass="action-title" text="Check Availability" />
+                            <Button fx:id="btnCheck" onAction="#checkAvilableSpotsBtn" styleClass="ActionButtons" text="Check" />
+                        </children>
+                    </VBox>
+
+                    <!-- 2. Parking History -->
+                    <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="1">
+                        <children>
+                            <Label styleClass="action-title" text="Parking History" />
+                            <Button fx:id="btnShowHistory" onAction="#onShowHistoryClicked" styleClass="ActionButtons" text="Show History" />
+                        </children>
+                    </VBox>
+
+                    <!-- 3. Park Without Reservation -->
+                    <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="2">
+                        <children>
+                            <Label styleClass="action-title" text="Park Now" />
+                            <Button fx:id="btnParkNoReservation" onAction="#onParkNoReservationClicked" styleClass="ActionButtons" text="Park Without Reservation" />
+                        </children>
+                    </VBox>
+
+                    <!-- 4. Park With Reservation Code -->
+                    <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="3">
+                        <children>
+                            <Label styleClass="action-title" text="Park With Code" />
+                            <Button fx:id="btnParkWithCode" onAction="#onShowReservationInput" styleClass="action-btn" text="Park With Reservation" />
+                        </children>
+                    </VBox>
+
+                    <!-- 5. Retrieve Car -->
+                    <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="4">
+                        <children>
+                            <Label styleClass="action-title" text="Retrieve Car" />
+                            <Button fx:id="btnRetrieveCar" onAction="#onShowRetrieveInput" styleClass="action-btn" text="Retrieve Car" />
+                        </children>
+                    </VBox>
+
+                    <!-- Define layout spacing -->
+                    <columnConstraints>
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- ===== Main Sections: Dynamic Panels (Center Area) ===== -->
+                <VBox fx:id="Sections" alignment="CENTER" BorderPane.alignment="CENTER">
+
+                    <!-- Parking History Section -->
+                    <VBox fx:id="historySection" alignment="CENTER" managed="false" spacing="10" visible="false">
+                        <children>
+                            <Label styleClass="section-header" text="Parking History" />
+                            <TextArea fx:id="txtHistoryArea" editable="false" prefHeight="200" prefWidth="400" wrapText="true" />
+                        </children>
+                    </VBox>
+
+                    <!-- Park Without Reservation Section -->
+                    <VBox fx:id="vboxParkWithoutReservationSection" alignment="CENTER">
+                        <Label styleClass="availability-label" text="Enter parking time:" />
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Label text="Hours:" />
+                                <ComboBox fx:id="comboHoursToPark" prefWidth="60" />
+                                <Label text="Minutes:" />
+                                <ComboBox fx:id="comboMinutesToPark" prefWidth="60" />
+                            </children>
+                        </HBox>
+                        <Label fx:id="lblParkingCode" styleClass="availability-label" text="" />
+                        <Button fx:id="btnParkNow" onAction="#onParkNowClicked" text="Park Now" />
+                    </VBox>
+
+                    <!-- Availability Message Section -->
+                    <VBox fx:id="vboxAvailableSpots" alignment="CENTER">
+                        <Label fx:id="lblAvailableSpots" styleClass="availability-label" text="" />
+                    </VBox>
+
+                    <!-- Reservation Code Input Section -->
+                    <VBox fx:id="vboxReservationCode" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtReservationCode" managed="true" promptText="Enter Reservation Code" styleClass="big-textfield" visible="true" />
+                        <Button fx:id="btnCheckReservationCode" onAction="#checkReservationCode" text="Check Reservation Code" />
+                    </VBox>
+
+                    <!-- Retrieve Car Section -->
+                    <VBox fx:id="vboxRetrieveCode" managed="false" spacing="10" visible="false">
+
+                        <!-- Parking Status Info -->
+                        <VBox fx:id="parkingStatusSection" alignment="CENTER" spacing="10" styleClass="card">
+                            <children>
+                                <Label alignment="CENTER" styleClass="section-header" text="Current Parking Status" />
+                                <Label fx:id="lblLocationStatus" text="Location: Slot B12" />
+                                <Label fx:id="lblStartTimeStatus" text="Start Time: 10:30" />
+                                <Label fx:id="lblMaxTimeStatus" text="Max Time: 4 hours" />
+                                <Label fx:id="lblRemainingTimeStatus" text="Remaining: 1 hour 15 minutes" />
+                            </children>
+                        </VBox>
+
+                        <!-- Input for Parking Code -->
+                        <Label text="Enter Parking Code:" />
+                        <TextField fx:id="txtRetrieveCode" managed="true" promptText="Enter Parking Code" styleClass="big-textfield" visible="true" />
+                        
+                        <!-- Retrieve Buttons -->
+                        <Button fx:id="btnRetrieveCar" onAction="#retrieveCar" text="Retrieve Car" />
+                        <Button fx:id="btnForgotParkingCode" onAction="#forgotParkingCode" text="Forgot my Parking Code" />
+                        <Label fx:id="lblRetriveCarStats" text="" styleClass="availability-label"/>
+                    </VBox>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </HBox>
+    </left>
+</BorderPane>

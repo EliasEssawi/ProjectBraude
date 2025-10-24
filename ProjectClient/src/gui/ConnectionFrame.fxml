@@ -5,14 +5,37 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
+<!--
+  Connection Screen UI (FXML)
+  Controller: client.ClientUI
+
+  This UI allows the user to enter an IP and port number to connect to the server.
+  It also provides a "Connect" button and an "Exit" button.
+-->
+
 <Pane prefHeight="200.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.ClientUI">
    <children>
+
+      <!-- Connect button: triggers connection to the server -->
       <Button fx:id="btnConnect" layoutX="150.0" layoutY="148.0" mnemonicParsing="false" onAction="#connect" text="Connect" />
-      <TextField fx:id="portField" layoutX="61.0" layoutY="66.0" />
+
+      <!-- Port input field: default value is 5555 -->
+      <TextField fx:id="portField" layoutX="61.0" layoutY="66.0" text="5555" />
+
+      <!-- Exit button: closes the application -->
       <Button fx:id="btnExit" layoutX="23.0" layoutY="148.0" mnemonicParsing="false" onAction="#getExitBtn" text="Exit" />
+
+      <!-- Label for the port field -->
       <Label fx:id="Portlbl" layoutX="21.0" layoutY="70.0" text="Port :" />
+
+      <!-- Label for the IP field -->
       <Label fx:id="IPLbl" layoutX="21.0" layoutY="28.0" text="IP :" />
-      <TextField fx:id="IPField" layoutX="61.0" layoutY="24.0" />
+
+      <!-- IP input field: default value is 'localhost' -->
+      <TextField fx:id="IPField" layoutX="61.0" layoutY="24.0" text="localhost" />
+
+      <!-- Label for showing connection or validation error messages -->
       <Label id="lblError" fx:id="lblError" layoutX="21.0" layoutY="110.0" />
+
    </children>
 </Pane>

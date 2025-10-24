@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- Root layout for the Sign In screen -->
+<BorderPane stylesheets="@SignIn.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiSignIn.SignInController">
+
+    <!-- Top Bar with title, welcome text, and exit button -->
+    <top>
+        <HBox fx:id="topBar" alignment="CENTER_LEFT" spacing="20" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="titleLabel" text="BPARK" />
+                <Label fx:id="welcomeLabel" text="Welcome please check and sign in" />
+                
+                <!-- Spacer to push the Exit button to the right -->
+                <HBox HBox.hgrow="ALWAYS" />
+                
+                <Button fx:id="btnExit" onAction="#getExitBtn" text="Exit" />
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- Center content: action buttons and sign-in sections -->
+    <center>
+        <HBox fx:id="mainContent" alignment="TOP_LEFT" prefHeight="450.0" prefWidth="888.0" spacing="50">
+            <children>
+
+                <!-- Action Buttons to select role -->
+                <GridPane fx:id="actionGrid" alignment="TOP_LEFT" hgap="20" vgap="20">
+                    <Button fx:id="bttagreader" onAction="#userSignInByTag" styleClass="ActionButtons" text="Subscriber Tag" GridPane.rowIndex="3" />
+                    <Button fx:id="btnSubscriberAway" onAction="#userSignInAwayOption" styleClass="ActionButtons" text="Subscriber Away" GridPane.rowIndex="5" />
+                    <Button fx:id="btnManager" onAction="#managerSignInOption" text="Manager" GridPane.rowIndex="7" />
+                    <Button fx:id="btnSubscriber" onAction="#userSignInOption" styleClass="ActionButtons" text="Subscriber" GridPane.rowIndex="1" />
+                    <Button fx:id="btUsher" onAction="#usherSignInOption" styleClass="ActionButtons" text="Usher" GridPane.rowIndex="9" />
+                    
+                    <columnConstraints>
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Sign-in sections for different user types -->
+                <VBox fx:id="Sections" alignment="CENTER" BorderPane.alignment="CENTER">
+
+                    
+                    <!-- Subscriber Terminal Sign In -->
+                    <VBox fx:id="vboxAsUser" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtUserSignIn" promptText="Enter Subscriber ID" styleClass="big-textfield" />
+                        <TextField fx:id="txtUserNameSignIn" promptText="Enter Subscriber Name" styleClass="big-textfield" />
+                        <Button fx:id="btnUserSignIn" onAction="#userSignIn" styleClass="signIn" text="Sign in" />
+                    </VBox>
+
+                    <!-- Usher Sign In -->
+                    <VBox fx:id="vboxAsUsher" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtUsherSignIn" promptText="Enter Usher ID" styleClass="big-textfield" />
+                        <Button fx:id="btnUsherSignIn" onAction="#usherSignIn" styleClass="signIn" text="Sign in" />
+                    </VBox>
+
+                    <!-- Subscriber Away Sign In -->
+                    <VBox fx:id="vboxAsSubscriberAway" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtSubscriberAwaySignIn" promptText="Enter Subscriber ID (Away)" styleClass="big-textfield" />
+                        <TextField fx:id="txtSubscriberAwayNameSignIn" promptText="Enter Subscriber Name" styleClass="big-textfield" />
+                        <Button fx:id="btnSubscriberAwaySignIn" onAction="#subscriberAwaySignIn" styleClass="signIn" text="Sign in (Away)" />
+                    </VBox>
+
+                    <!-- Manager Sign In -->
+                    <VBox fx:id="vboxAsManager" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtManagerSignIn" promptText="Enter Manager ID" styleClass="big-textfield" />
+                        <Button fx:id="btnManagerSignIn" onAction="#managerSignIn" styleClass="signIn" text="Sign in" />
+                    </VBox>
+
+                    <!-- Subscriber Tag Sign In -->
+                    <VBox fx:id="vboxAsSubscriberTag" managed="false" spacing="10" visible="false">
+                        <TextField fx:id="txtSubscriberSignInTag" promptText="Enter Tag ID" styleClass="big-textfield" />
+                        <Button fx:id="btnSubscriberSignIn" onAction="#subscriberSignInTag" styleClass="signIn" text="Sign in By Tag" />
+                    </VBox>
+
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </HBox>
+    </center>
+
+    <!-- Footer with notification label -->
+    <bottom>
+        <HBox fx:id="footerBar" alignment="CENTER" prefHeight="41.0" prefWidth="688.0">
+            <children>
+                <Label fx:id="lblNotification" graphicTextGap="1.0" prefHeight="46.0" prefWidth="374.0" styleClass="notification-label" text="Sign In Failed, check ID" visible="false">
+                    <font>
+                        <Font size="5.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,172 @@
+/* ========== Top Bar ========== */
+#topBar {
+    -fx-background-color: #1E3A8A; /* Deep blue background */
+    -fx-padding: 16px; /* Space inside the bar */
+}
+
+#titleLabel {
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+#welcomeLabel {
+    -fx-text-fill: white;
+}
+
+/* ========== Main Content ========== */
+#mainContent {
+    -fx-padding: 20px; /* Outer padding for central area */
+}
+
+/* ========== Section Box Styling ========== */
+#parkingStatus {
+    -fx-background-color: white;
+    -fx-padding: 16px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4); /* Subtle shadow effect */
+}
+
+/* ========== Section Headers ========== */
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 5 0; /* Top and bottom spacing */
+}
+
+/* ========== Footer Bar ========== */
+#footerBar {
+    -fx-background-color: #1E3A8A;
+    -fx-padding: 10px;
+}
+
+#footerBar > .label {
+    -fx-text-fill: white; /* White text inside footer labels */
+}
+
+/* ========== Action Titles (Sidebar) ========== */
+.action-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Dark blue/gray tone */
+}
+
+/* ========== Button Base Style ========== */
+.button {
+    -fx-background-radius: 4px;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-color: #4B5563; /* Gray default */
+    -fx-pref-width: 191px;
+    -fx-pref-height: 36px;
+}
+
+.button:hover {
+    -fx-background-color: #2563EB; /* Blue on hover */
+}
+
+/* ========== Logout Button Style ========== */
+#btnLogout {
+    -fx-background-color: #EF4444; /* Red base */
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-pref-width: 76px;
+    -fx-pref-height: 36px;
+}
+#btnLogout:hover {
+    -fx-background-color: #8B0000; /* Darker red on hover */
+}
+
+/* ========== Label for Available Spots ========== */
+.availability-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-background-radius: 5px;
+}
+
+/* ========== Table Styling ========== */
+.table-view {
+    -fx-border-color: #ddd; /* Light gray border */
+    -fx-border-width: 1px;
+}
+
+/* ========== TextField Styling ========== */
+.text-field {
+    -fx-pref-width: 200;
+    -fx-font-size: 14px;
+}
+
+.big-textfield {
+    -fx-font-size: 16px;
+    -fx-pref-width: 250;
+    -fx-pref-height: 40;
+    -fx-border-color: #333;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* ========== Small Time TextFields ========== */
+time-textfield {
+    -fx-font-size: 16px;
+    -fx-pref-width: 50;
+    -fx-pref-height: 40;
+    -fx-border-color: #333;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* ========== Specific Button Styles ========== */
+
+/* Check Parking Code Button */
+#btnCheckParkingCode {
+    -fx-background-color: #10B981; /* Teal */
+}
+#btnCheckParkingCode:hover {
+    -fx-background-color: #047857; /* Darker teal */
+}
+
+/* Check Reservation Code Button */
+#btnCheckReservationCode {
+    -fx-background-color: #10B981;
+}
+#btnCheckReservationCode:hover {
+    -fx-background-color: #047857;
+}
+
+/* Retrieve Button */
+#btnRetrieve {
+    -fx-background-color: #FF6B6B; /* Light red */
+}
+#btnRetrieve:hover {
+    -fx-background-color: #8B0000; /* Dark red */
+}
+
+/* Extend Button */
+#btnExtend {
+    -fx-background-color: #FFC107; /* Amber */
+}
+#btnExtend:hover {
+    -fx-background-color: #DAA520; /* Goldenrod */
+}
+
+/* ========== Card Container ========== */
+.card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 4, 0.0, 0, 2);
+}
+
+/* ========== Notification Label ========== */
+.notification-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: green;
+    -fx-background-color: rgba(0, 255, 0, 0.5); /* Translucent green */
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
